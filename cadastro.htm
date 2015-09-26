@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html id="html">
+		<head>
+			<meta charset="utf-8" http-equiv="Content-Type" content="text/html"; charset="iso-8859-1"  />
+			<title>Biblioteca Online</title>
+			  <link rel="stylesheet" type="text/css" href="estilo.css">
+			  <link rel="stylesheet" href="normalize.css">
+			  <link rel="stylesheet" href="gallery.prefixed.css">
+			  <link rel="stylesheet" href="gallery.theme.css">
+			  <style type="text/css">
+				.style1 {
+				color: #FF0000;
+				font-size: x-small;
+				}
+				.style3 {color: #0000FF; font-size: x-small; }
+			</style>
+	
+			<script type="text/javascript">
+				function validaCampo()
+				{
+				if(document.cadastro.nome.value=="")
+				{
+				alert("O Campo nome é obrigatório!");
+				return false;
+				}
+				else
+				if(document.cadastro.email.value=="")
+				{
+				alert("O Campo email é obrigatório!");
+				return false;
+				}
+				else
+				if(document.cadastro.endereco.value=="")
+				{
+				alert("O Campo endereço é obrigatório!");
+				return false;
+				}
+				else
+				if(document.cadastro.cidade.value=="")
+				{
+				alert("O Campo Cidade é obrigatório!");
+				return false;
+				}
+				else
+				if(document.cadastro.estado.value=="")
+				{
+				alert("O Campo Estado é obrigatório!");
+				return false;
+				}
+				else
+				if(document.cadastro.bairro.value=="")
+				{
+				alert("O Campo Bairro é obrigatório!");
+				return false;
+				}
+				else
+				if(document.cadastro.pais.value=="")
+				{
+				alert("O Campo país é obrigatório!");
+				return false;
+				}
+				else
+				if(document.cadastro.login.value=="")
+				{
+				alert("O Campo Login é obrigatório!");
+				return false;
+				}
+				else
+				if(document.cadastro.senha.value=="")
+				{
+				alert("Digite uma senha!");
+				return false;
+				}
+				else
+				return true;
+				}
+		<!-- Fim do JavaScript que validará os campos obrigatórios! -->
+			</script>
+		</head>
+		<body id="body">
+		<!--  MENU PRINCIPAL -->
+		<ul id="menu">
+			<li><a href="Default.htm">Home</a></li>
+			<li><a href="livros.htm">Livros</a></li>
+			<li><a href="forum.htm">Fórum</a></li>
+			<li><a href="download.htm">Download</a></li>
+			<li><a href="restrito.htm">Login</a></li>
+			<li><a href="contato.htm">Contato</a></li>
+		</ul>
+		<!--  MENU PRINCIPAL -->
+		
+
+
+		<form style="padding: 70px;" id="cadastro" name="cadastro" method="post" action="cadastro.php" onsubmit="return validaCampo(); return false;">
+			  <table width="625" border="0">
+				<tr>
+				  <td width="69">Nome:</td>
+				  <td width="546"><input name="nome" type="text" id="nome" size="70" maxlength="60" />
+					<span class="style1">*</span></td>
+				</tr>
+				<tr>
+				  <td>Email:</td>
+				  <td><input name="email" type="text" id="email" size="70" maxlength="60" />
+				  <span class="style1">*</span></td>
+				</tr>
+				<tr>
+				  <td>Sexo:</td>
+				  <td><input name="sexo" type="radio" value="Masculino" checked="checked" />
+					Masculino
+					<input name="sexo" type="radio" value="Feminino" />
+					Feminino <span class="style1">*</span> </td>
+				</tr>
+				<tr>
+				  <td>Login:</td>
+				  <td><input name="login" type="text" id="login" maxlength="12" />
+					<span class="style1">*</span></td>
+				</tr>
+				<tr>
+				  <td>Senha:</td>
+				  <td><input name="senha" type="password" id="senha" maxlength="12" />
+					  <span class="style1">*</span></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<input name="limpar" type="reset" id="limpar" value="Limpar Campos preenchidos!" />
+					</td>
+				</tr>
+		
+		<!--
+		
+				<tr>
+				  <td colspan="2"><p>
+					<input onclick="alert('Cadastro realizado')" name="cadastrar" type="submit" id="cadastrar" value="Concluir meu Cadastro!" />
+				   
+			 
+					  <input name="limpar" type="reset" id="limpar" value="Limpar Campos preenchidos!" />
+					 
+			 
+					  <span class="style1">* Campos com * são obrigatórios!          </span></p>
+				  <p>  </p></td>
+				</tr>
+		-->		
+				
+			  </table>
+			  
+		</form>
+		<a href="default.htm"><button name="cadastro"onclick="alert('Cadastro realizado')">Concluir meu Cadastro</button></a>
+		
+</body>
+</html>
+		
+	
