@@ -1,0 +1,16 @@
+*{padding:0;margin:0;}
+
+/*Centralizar email*/
+.centralizaEmail{width:40.3333333%;height:600px;border:1px solid #ccc;margin:0 auto !important;padding:20px;}
+
+/*Manipula textArea*/
+.textArea{max-width:100% !important;max-height:310px;}
+
+/*botao Envia*/
+.enviarEmail{margin-top:30px;float: right;}
+
+/*Span de mensagem requerida*/
+.requerido{color:red;font-weight: bold;}
+
+/*Formulario*/
+.frmEmail{height: auto;min-height:300px;}

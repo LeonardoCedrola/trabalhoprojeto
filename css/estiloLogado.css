@@ -1,0 +1,254 @@
+﻿@charset "utf-8";
+@import url("normalize.css");
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab");
+
+/*GLOBAL*/
+a{overflow:hidden;}
+.resolucaoBaixa{display: none;}
+*{margin:0;padding:0;}
+body,html{background-color: #eee;}
+
+/*Contador de dados*/
+.badge{background-color: #337ab7;float:right;}
+.menu{margin-bottom: 0 !important;}
+.relatorio{background-color: white;}
+
+/*Tela de cadastro do cliente*/
+.btnRight{float: right;margin-top:-5px;}
+.alert{text-align: center;}
+
+/*Modelo Whatsapp - Layout backdoor
+#topoColorido{z-index:99999;background-color:black;width:100%;height:50px;top:0;clear:both;display:block;margin:0 auto;}
+#topoColorido a{float:left;text-align:left;left:0;position:relative;line-height:50px;font-size:1em;color:white;margin-left:20px;text-decoration:none;}
+#topoColorido ul{float:left;position:relative;}
+#topoColorido h2 a{float:right;text-align:right;right:0;position:relative;font-size:1em;color:white;margin:0 20px 0 0;}
+#corpo{z-index:1;width:100%;min-height:900px;height:auto;background-color:#d9dbd5;top:0;margin:0 auto 40px auto;display:table;border:none;}
+
+/*Resultados exibidos no topo
+.prendeResultados,.trilhaMigalhas{width:100%;height:40px;margin:5px auto;border-radius:5px;border-collapse:collapse;line-height: 40px;color:white;text-align:center;clear:both;}
+.prendeResultados img{float:left;margin:5px auto;}
+.trilhaMigalhas{background-color:#3d7665;}
+.erro{border:none;background:#990000 url("");margin-bottom:5px;text-align: center;}
+.sucesso{border:none;background-color:#009900;margin-bottom:5px;text-align: center;}
+
+/*Menu da marca do site
+.marca{width:20.7%;height:50px;position:absolute;float:left;display:block;}
+.marca li a{width:90%;}
+.marca li ul{z-index:1;background-color:white;position:relative;display:none;height:800px;width:100%;color:black;}
+.marca li ul a{float:left;color:black;float:left;text-align:left;}
+.marca li:hover ul{display:block;}
+.dadosMarca img{width:40px; height:40px;float: left;position:relative;margin-right:5px;}
+.dadosMarca:first-child{border-bottom:none;}
+.dadosMarca:last-child{border-top:none;}
+.dadosMarca{width:95%;padding:7px;height:40px;line-height:40px;border-top:1px solid #ccc;border-bottom:1px solid #ccc;}
+
+/*Seta para cima
+.seta-cima{display: inline-block;vertical-align: middle;width: 0;height: 0;border-left: 15px solid transparent;
+  border-right: 15px solid transparent;border-bottom: 15px solid white;margin:-30px 0 0 25px;}
+
+/*Botoes do sistema
+.btnNavegacaoInicio{float:left;margin-top:5px;}
+.btnNavegacaoFim{float:right;margin-top:5px;}
+#btnSalvarPublicacao,#btnSalvarPerfil,#btnSalvarVersao,#btnSalvarLicenca,#btnSalvarLicenca,#btnExcluirCliente,#btnSalvarCliente,#btnSalvarFuncionario,#btnNovaPublicacao,#btnSalvarFuncionario,#btnSalvarFuncionario{width:auto;display:block;line-height:20px;height:30px;float:left;border:none;padding:5px;background-color:#00A999;color:#ffffff;margin:5px;-webkit-border-radius: 5px;-moz-border-radius: 5px;-ms-border-radius: 5px;-o-border-radius: 5px;border-radius: 5px;}
+#btnSalvarPublicacao:hover,#btnSalvarPerfil:hover,#btnSalvarVersao:hover,#btnSalvarLicenca:hover,#btnSalvarLicenca:hover,#btnExcluirCliente:hover,#btnSalvarCliente:hover,#btnSalvarFuncionario:hover,#btnNovaPublicacao:hover,#btnSalvarFuncionario:hover{background-color:#00C999;}
+#btnExcluirClienteLista{background-color:transparent;border:none;float:left;width:32px;height:32px;margin-right:5px;}
+.btnExcluirClienteLista{background-image:url("../imagens/acoes/deletar.png");width:32px;height:32px;background-position:center; }
+#btnDeletarCliente{width:15%;height:40px;background-color:#009900;padding:4px;border-radius:5px;text-decoration:none;color:white;margin:0 0 0 10px;border:none;}
+#btnDeletarCliente:hover{background-color:#007700;}
+#btnNaoDeletarCliente{width:15%;height:40px;background-color:#ff4500;padding:4px;border-radius:5px;text-decoration:none;color:white;margin:0 0 0 10px;border:none;}
+#btnNaoDeletarCliente:hover{background-color:#cc4500;}
+
+/*Menu
+#marcaSistema{width:100%;height:65px;color:#3d7665;}
+#marcaSistema h1{text-align:left;font-size:0.8em;text-transform: uppercase;color:#3d7665;}
+#menuSistema{width:20%;min-height:500px;display:block;float: left;position: relative;background-color:white;padding:5px;}
+#menuSistema hr{border:1px solid #d9dbd5;height:0;border-collapse:collapse;}
+#menuSistema li{list-style:none;margin:0 -5px 0 5px;}
+#menuSistema li a{text-decoration: none;width:96%;height:30px;line-height:30px;display:inline-block;}
+#menuSistema li:hover a{background-color:#3d7665;color:#eee;}
+
+.acoes{width:100%;height:40px;line-height:40px;display:block;color:red;text-align:left;font-weight:bold;text-transform:uppercase;font-size:0.7em;clear:both;margin:0 -5px 0 5px;}
+.cadastrarPessoa,.listar,.home,.sair,.compatibilidade{width:16px;height:16px;background-position:left;float:left;left:0;margin: 8px 5px 0 0;}
+.cadastrarPessoa{background-image: url("../imagens/list/cadastrarPessoa.png");}
+.listar{background-image: url("../imagens/list/listar.png");}
+.home{background-image: url("../imagens/list/home.png");}
+.sair{background-image: url("../imagens/list/sair.png");}
+.compatibilidade{background-image: url("../imagens/list/compatibilidade.png");}
+.totalListagem{float:right;text-align:right;font-weight: bold;color: red;}
+/*Apresentação do conteudo
+#exibeConteudo{float:right;width:77.5%;min-height: 958px;height:auto;border:none;background:white;padding:0 10px;}
+
+/*Prende a busca do lado esquerdo
+#seguraBusca{float:left;width:99%;height:40px;margin:0 auto;}
+#campoBusca{width:auto;width:86.2%;height:38px;border:1px solid #ccc;outline:none;text-indent: 5px;line-height:38px;float:left;}
+#botaoBusca{float:left;height:40px;width:13% ;border:1px solid #ccc;background-color:#ffffff;}
+.botaoBusca{float:left;height:40px;width:13%;background-image:url("../imagens/lupa.png");background-repeat:no-repeat;background-position:center;}
+
+/*Pagina lista-clientes
+#prendePaginacao{width:100%;background-color:#3d7665;height:50px;margin:10px auto;line-height:50px;clear:both;display:block;position:relative;border-radius:5px;}
+#prendePaginacao img{margin-top:10px;}
+#prendePaginacao a{margin:5px;text-decoration:none;color:white;}
+#prendePaginacao a:hover{color:#ff4500;}
+#accordion{display:table;height:auto;width:100%;}
+.group{width:100%;margin:0 auto;display:table;height:auto;text-align:justify;}
+.linkAtivoNavegacao{color:#880000;font-weight:bold;}
+
+/*Listagem de cliente duplicado
+.clienteDuplicado{display:block;float:left;border:1px solid #ccc;width:100%;height:40px;line-height:40px;text-indent:10px;}
+
+/*ListarCliente
+.pasta{float:right;color: red;}
+.seguraAcoes{float:right;width:12%;}
+.seguraAcoes a{text-decoration:none;}
+.listarDados{float:left;width:80%;min-height:100px;margin-bottom:15px;}
+.lblListarDados{width:100%;height:30px;float:left;display:inline;border-bottom:1px solid #ccc;line-height:30px;}
+.lblListarPastaCliente,.lblListarNomeCliente,.lblListarDataCadastroCliente,.lblListarCpfCliente,.lblListarRgCliente,.lblListarContatoCliente,.lblListarProcessoCliente{width:22%;float:left;}
+.listarPastaCliente{color:#008800;}
+.listarNomeCliente{color:#880000;font-weight:bold;}
+.listarDataCadastroCliente{color:#008800;}
+.listarCpfCliente{color:#880000;font-weight:bold;}
+.listarRgCliente{color:#008800;}
+.listarContatoCliente{color:#008800;}
+.listarProcessoCliente{color:#880000;font-weight:bold;}
+
+/*Publicação
+#frmPublicacao{width:100%;border:none;display:block;min-height:550px;height:auto;background-color: #eee;}
+#pastaPublicacao{width:100%;height:27px;line-height:27px;border:1px solid #ccc;text-align:right;}
+#processoPublicacao{width:100%;height:27px;line-height:27px;border:1px solid #ccc;text-align:right;}
+#advogadoPublicacao{width:100%;height:27px;line-height:27px;border:1px solid #ccc;text-align:left;}
+#publicacao{width:100%;max-width:100%;height:400px;max-height:400px;display:block;line-height:27px;border:1px solid #ccc;text-align:left;position:relative;}
+.lblPastaPublicacao{height:55px;width:10%;float:left;margin-right:5px;}
+.lblProcessoPublicacao{height:55px;width:45%;float:left;margin-right:5px;}
+.lblAdvogadoPublicacao{height:55px;width:43%;float:left;margin-right:5px;}
+.lblPublicacao{height:420px;width:99%;float:left;margin-bottom:20px;}
+
+/*Formulario de cadastro e edição de clientes
+#frmCliente{border:none;width:100%;margin:0 auto;display:table;min-height:550px;height:auto;}
+#pastaCliente,#nomeCliente,#logradouroCliente,#cidadeCliente,#cepCliente,#bairroCliente,#ufCliente,#emailCliente,#estadoCivilCliente,#cpfCliente,#rgCliente,#telefoneCliente,#celularCliente,#processoCliente,#varaCliente,#tipoAcaoCliente,#advogadoCliente,#salvaCliente,#numeroEnderecoCliente,#complementoCliente,#orgaoCliente{width:100%;height:35px;line-height:35px;border:1px solid #ccc;}
+#pastaCliente,#cpfCliente,#rgCliente,#processoCliente,#cepCliente,#numeroEnderecoCliente{text-align:right;}
+.seguraTitulo{width: 100%;display:block;height:40px;border-radius:5px;margin:0 auto;background-color:#3d7665;line-height:40px;}
+.dadosPessoais,.contato,.processo{width:99%;min-height:80px;height:auto;background-color:#dedede;margin:0 auto 5px auto;clear:both;padding:4px;border:1px solid #ccc;box-shadow:0 0 3px #ccc;display:table;}
+.dadosPessoais{margin-top:5px;}
+.campoObrigatorio{color: red;font-weight: bold;}
+.lblPastaCliente{height:55px;width:7%;float:left;margin:0 5px 10px 0;}
+.lblNomeCliente{height:55px;width:35%;float:left;margin:0 5px 10px 0;}
+.lblNumeroEnderecoCliente{height:55px;width:10%;float:left;margin:0 5px 10px 0;}
+.lblLogradouroCliente{height:55px;width:45%;float:left;margin:0 5px 10px 0;}
+.lblCidadeCliente{height:55px;width:23%;float:left;margin:0 5px 10px 0;}
+.lblCepCliente{height:55px;width:12%;float:left;margin:0 5px 10px 0;}
+.lblBairroCliente{height:55px;width:29%;float:left;margin:0 5px 10px 0;}
+.lblUfCliente{height:55px;width:6%;float:left;margin:0 5px 10px 0;}
+.lblEmailCliente{height:55px;width:39%;float:left;margin:0 5px 10px 0;}
+.lblEstadoCivilCliente{height:55px;width:20%;float:left;margin:0 5px 10px 0;}
+.lblCpfCliente{height:55px;width:14%;float:left;margin:0 5px 10px 0;}
+.lblRgCliente{height:55px;width:12%;float:left;margin:0 5px 10px 0;}
+.lblOrgaoCliente{height:55px;width:12%;float:left;margin:0 5px 10px 0;}
+.lblTelefoneCliente{height:55px;width:16%;float:left;margin:5px 5px 0 0;}
+.lblCelularCliente{height:55px;width:16%;float:left;margin:5px 5px 0 0;}
+.lblProcessoCliente{height:55px;width:24%;float:left;margin:5px 5px 0 0;}
+.lblVaraCliente{height:55px;width:15%;float:left;margin:5px 5px 0 0;}
+.lblAcaoCliente{height:55px;width:18%;float:left;margin:5px 5px 0 0;}
+.lblAdvogadoCliente{height:55px;width:40%;float:left;margin:5px 5px 0 0;}
+.lblTipoContatoCliente{height:55px;width:40%;float:left;margin:5px 5px 0 0;}
+.lblModeloContatoCliente{height:55px;width:20%;float:left;margin:5px 5px 0 0;}
+.lblEditarContatoCliente{height:55px;width:21%;float:left;margin:5px 5px 0 0;}
+.lblComplementoCliente{height:55px;width:23%;float:left;margin:0 5px 10px 0;}
+#seguraDadosContato{width:49%;float:left;min-height:30px;border:1px solid #ccc;display:table;position:relative;left:0;}
+#seguraDadosProcesso{width:49%;float:right;min-height:30px;border:1px solid #ccc;display:table;position:relative;right:0;}
+#separaInformacoes{width:100%;clear:both;display:block;margin:30px auto;}
+#tituloDadosContato,#tituloDadosProcesso{width:100%;height:40px;line-height:40px;color:white;background-color:#3d7665;text-indent:5px;}
+#tituloDadosContato a,#tituloDadosProcesso a{float:right;margin:5px auto -5px auto;}
+.conteudo{width:100%;height:40px;line-height:30px;border-bottom:1px solid #ccc;display:table;}
+.conteudo:last-child{border-bottom:none;}
+.conteudo img{float:right;margin-top:5px;}
+.lblExibirInformacao{width:25%;height:30px;line-height:40px;float:left;margin-right:10px;color:#008800;text-transform:uppercase;}
+.exibirInformacaoContato{width:57%;height:40px;line-height:40px;float:left;color:#880000;}
+.exibirInformacaoProcesso{width:59%;height:40px;line-height:40px;float:left;color:#880000;}
+.exibirInformacaoPasta{width:72%;height:40px;line-height:40px;float:left;color:#880000;}
+.exibirInformacaoPublicacao{width:66%;height:40px;line-height:40px;float:left;color:#880000;}
+#novoContato,#novoProcesso{height:30px;width:60%;border:1px solid #ccc;}
+#tipoNovoContato,#varaNovoProcesso{width:25%;height:30px;margin:10px 10px 0 0;border:1px solid #ccc;}
+#btnSalvarNovoContato,#btnSalvarNovoProcesso{background-color: transparent;border:none;width:32px;height:32px;float:right;margin-top:10px;}
+.btnSalvarNovoContato,.btnSalvarNovoProcesso{background-image:url("../imagens/acoes/btnSalvarNovoContato.png");background-repeat:no-repeat;width:32px;height:32px;background-position:center;}
+.seguraMaps{width: 100%;height:320px;background-color:#eee;border:1px solid #ccc;margin:10px auto;}
+
+/*Pagina cadastro de novo funcionario
+#frmFuncionario{border:none;width:100%;margin:0 auto;display:table;min-height:550px;height:auto;}
+#nomeFuncionario{width:100%;height:35px;line-height:35px;border:1px solid #ccc;}
+#emailFuncionario{width:100%;height:35px;line-height:35px;border:1px solid #ccc;}
+#senhaFuncionario{width:100%;height:35px;line-height:35px;border:1px solid #ccc;}
+#senhaAdministrador{width:100%;height:35px;line-height:35px;border:1px solid #ccc;}
+.funcionario,.salvarFuncionario{width:99%;min-height:100px;height:auto;background-color:#dedede;margin:0 auto 5px auto;clear:both;padding:4px;border:1px solid #ccc;box-shadow:0 0 3px #ccc;display:table;}
+.lblNomeFuncionario{height:55px;width:35%;float:left;margin-right:5px;}
+.lblEmailFuncionario{height:55px;width:35%;float:left;margin-right:5px;}
+.lblSenhaFuncionario{height:55px;width:25%;float:left;margin-right:5px;}
+.lblSenhaAdministrador{height:55px;width:25%;float:left;margin-right:5px;}
+
+/*Editar o Perfil
+#frmEditarPerfil{border:none;width:100%;margin:0 auto;display:table;min-height:550px;height:auto;}
+#frmEditarPerfil label{float:left;}
+#nomePerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#logradouroPerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#numeroLogradouroFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#cidadePerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#bairroPerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#cepPerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#emailPerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#cpfPerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#rgPerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#telefonePerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#celularPerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#estadoCivilPerfilFuncionario{width:100%;height:37px;line-height:25px;border:1px solid #ccc;}
+#tipoPerfilFuncionario{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+.seguraDadosPerfil,.seguraDadosContato,.seguraNovaSenha,.seguraAcoesPerfil{width:99%;min-height:80px;height:auto;background-color:#dedede;margin:0 auto 5px auto;clear:both;padding:4px;border:1px solid #ccc;box-shadow:0 0 3px #ccc;display:table;}
+.novaSenhaPerfil{width:auto;margin-right:5px;height:35px;line-height:25px;border:1px solid #ccc;}
+.confirmaNovaSenhaPerfil{width:auto;height:35px;line-height:25px;border:1px solid #ccc;}
+.lblNomePerfil{width:30%;margin-right:5px;box-sizing:border-box;}
+.lblLogradouroPerfil{width:37%;margin-right:5px;box-sizing:border-box;}
+.lblNumeroLogradouroFuncionario{width:10%;margin-right:5px;box-sizing:border-box;}
+.lblCidadePerfil{width:20%;margin-right:5px;box-sizing:border-box;}
+.lblBairroPerfil{width:30%;margin-right:5px;float:left;box-sizing:border-box;}
+.lblCepPerfil{width:12%;margin-right:5px;float:left;box-sizing:border-box;}
+.lblEmailPerfil{width:36%;margin-right:5px;float:left;box-sizing:border-box;}
+.lblCpfPerfil{width:15%;margin-right:5px;float:left;box-sizing:border-box;}
+.lblRgPerfil{width:15%;margin-right:5px;float:left;box-sizing:border-box;}
+.lblTelefonePerfil{width:15%;margin-right:5px;float:left;box-sizing:border-box;}
+.lblCelularPerfil{width:15%;margin-right:5px;float:left;box-sizing:border-box;}
+.lblEstadoCivilPerfil{width:20%;float:left;box-sizing:border-box;}
+
+/*Nova versao
+#frmVersao{border:none;width:100%;margin:0 auto;display:table;min-height:550px;height:auto;}
+#codigoVersao{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+#novidadeVersao{width:100%;height:300px;line-height:25px;border:1px solid #ccc;}
+.seguraVersao{width:99%;min-height:80px;height:auto;background-color:#dedede;margin:0 auto 5px auto;clear:both;padding:4px;border:1px solid #ccc;box-shadow:0 0 3px #ccc;display:table;}
+.lblCodigoVersao{width:26%;margin-right:15px;box-sizing:border-box;}
+.lblNovidadeVersao{width:26%;margin-right:15px;box-sizing:border-box;}
+
+/*compatibilidade
+#tabelaCompatibilidade{width:100%;border-collapse: collapse;position:relative;}
+#tabelaCompatibilidade td{border-collapse: collapse;border:1px solid #ccc;padding:5px;}
+.windows{background-image: url("../imagens/compatibilidade/windows.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+#windows{width:130px;height:32px;}
+.navegadorChrome{background-image: url("../imagens/compatibilidade/chrome.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+.navegadorIE{background-image: url("../imagens/compatibilidade/ie.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+.navegadorSafari{background-image: url("../imagens/compatibilidade/safari.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+.navegadorMozilla{background-image: url("../imagens/compatibilidade/mozilla.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+.navegadorOutros{background-image: url("../imagens/compatibilidade/outros.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+.navegadorOpera{background-image: url("../imagens/compatibilidade/opera.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+.resolucao{background-image: url("../imagens/compatibilidade/resolucao.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+#resolucao{width:80px;height:32px;}
+.memoria{background-image: url("../imagens/compatibilidade/memoria.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+.processador{background-image: url("../imagens/compatibilidade/processador.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+#processador{width:120px;height:32px;}
+.navegadorCompativel{background-image: url("../imagens/compatibilidade/sucesso.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+.navegadorIncompativel{background-image: url("../imagens/compatibilidade/stop.png");background-repeat:no-repeat;background-position:center;width:32px;height:32px;margin-left:35%;}
+#seguraPrequisitos{width:100%;display:block;clear: both;position:relative;background-color:#eee;}
+#seguraPrequisitos h3{font-weight:bold;color:#800;}
+.preRequisitos li{margin-left:30px; list-style: decimal;}
+.destacapreRequisito{font-style: italic;font-family: helvetica;color:#3d5996;font-weight: bold;}
+
+/*Cadastrar nova licença
+#frmLicenca{border:none;width:100%;margin:0 auto;display:table;min-height:550px;height:auto;}
+.prendeLicenca{width:99%;min-height:80px;height:auto;background-color:#dedede;margin:0 auto 5px auto;clear:both;padding:4px;border:1px solid #ccc;box-shadow:0 0 3px #ccc;display:table;}
+#novaLicenca{width:100%;height:35px;line-height:25px;border:1px solid #ccc;}
+.lblNovaLicenca{width:26%;margin-right:15px;box-sizing:border-box;}
