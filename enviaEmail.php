@@ -5,10 +5,26 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Email</title>
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/css.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/css.css">
+			<link rel="stylesheet" type="text/css" href="estilo.css">
+			  <link rel="stylesheet" href="normalize.css">
+			  <link rel="stylesheet" href="gallery.prefixed.css">
+			  <link rel="stylesheet" href="gallery.theme.css">
 </head>
 <body>
+<?php
+
+error_reporting(0); ?>
+<!--  MENU PRINCIPAL -->
+		<ul id="menu">
+			<li><a href="index.htm">Home</a></li>
+			<li><a href="livros.htm">Livros</a></li>
+			<li><a href="forum.htm">Fórum</a></li>
+			<li><a href="download.htm">Download</a></li>
+			<li><a href="restrito.htm">Login</a></li>
+			<li><a href="enviaEmail.php">Contato</a></li>		</ul>
+		<!--  MENU PRINCIPAL -->
 	
 <div class="centralizaEmail">
 	
@@ -36,6 +52,8 @@
 
   <input type="submit" name="enviarEmail" value="Enviar Email" class="btn btn-primary enviarEmail">
   </form>
+  
+ 
 
 </div>
 
