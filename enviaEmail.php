@@ -20,7 +20,7 @@ error_reporting(0); ?>
 		<ul id="menu">
 			<li><a href="index.htm">Home</a></li>
 			<li><a href="livros.htm">Livros</a></li>
-			<li><a href="forum.htm">Fórum</a></li>
+			<li><a href="forum/forum.php">Fórum</a></li>
 			<li><a href="download.htm">Download</a></li>
 			<li><a href="restrito.htm">Login</a></li>
 			<li><a href="enviaEmail.php">Contato</a></li>		</ul>
